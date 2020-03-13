@@ -1,0 +1,89 @@
+#encoding: cp866
+ 
+print " Давай поиграем в очень известную игру\n "
+
+money = 30 
+
+print "Я дам тебе 30 $ для начала игры. Не оплошай!\n"
+
+
+until money == 0
+   
+	if money >= 100
+		abort "You winner 100 $"
+	end
+                       
+		print " Введи свой выбор:(1-Камень-2-Ножницы-3-Бумага) " 
+
+			x = gets.strip
+
+	exit if x.empty?                                            
+
+ 		x = x.to_i
+
+
+	if x == 1
+		s = :rock
+			puts "Your change is Rock!"
+	elsif x == 2
+		puts "Your change is Scissors!"
+		s = :scissors
+	elsif x == 3
+		puts "Your change is Paper!"
+		s = :paper
+	else
+		puts "Я не пойму что ты ввёл!"
+	end                 
+ 
+		arr = [:rock, :scissors, :paper]
+   			z = arr[rand(0..2)]         
+  				puts "Я выбираю #{z}"                                              
+
+	if s == z
+		puts "#{s}---#{z} Ничья!\n  "
+	end                 
+ 
+	if s == :rock  && z == :scissors
+         	money = money + 10                 
+         	elsif s == :rock && z == :paper
+			money = money - 10
+
+ 	elsif s == :scissors  && z == :paper
+         	money = money + 10
+         	elsif s == :scissors && z == :rock
+		money = money - 10
+
+ 	elsif s == :paper  && z == :scissors
+         	money = money - 10
+         		elsif s == :paper && z == :rock
+
+		money = money + 10
+		elsif money == 0  
+			puts "You luzer!"
+		end 
+
+
+	if s == :rock  && z == :scissors
+		puts "You winner! #{s}---#{z}\n У тебя осталось #{money} $"
+	elsif s == :rock && z == :paper
+		puts "You Luzer! #{s}---#{z}\n У тебя осталось #{money} $"
+	elsif s == :scissors && z == :paper
+		puts "You winner! #{s}---#{z}\n У тебя осталось #{money} $"
+	elsif s == :scissors && z == :rock
+		puts "You luzer ! #{s}---#{z}\n У тебя осталось #{money} $"
+	elsif s == :paper && z == :rock
+		puts "You winner ! #{s}---#{z}\n У тебя осталось #{money} $" 
+	elsif s == :paper && z ==:scissors
+		puts  "You luzer ! #{s}---#{z}\n У тебя осталось #{money} $" 
+	end
+
+
+ end
+    
+
+
+
+
+
+
+
