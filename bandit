@@ -1,0 +1,130 @@
+#encoding: cp866
+print "Сколько вам лет? "
+age = gets.to_i 
+ case age 
+ when (0..17)
+ print " Мой юный подаван.К моему глубочайшему сожалению ты не можешь сыграть! Прощай!!! "
+    exit
+
+when (18..100)
+print " Тем не менее, непротив сыграть? (Y/N) "
+  answer = gets.strip.capitalize.to_s
+
+else                                                         
+print " Не верю в твои года! " 
+exit
+end
+  
+ if answer == "Y" 
+     puts " Хорошо, я тебе поверю сосунок! "
+else
+ print " Необходимо ввести Y дигинерат! " 
+ exit
+end
+
+
+puts " Я дам тебе 100 $  для начала игры. Желаю удачи! "
+
+
+     vazelin = 0
+ money = 100
+while money != 0
+print "Введите Enter что бы дернуть ручку! "
+       number = gets.strip
+                          
+
+if number.empty?
+print" Погнали! "
+else
+print " #{number} Не допустимое значение!"
+exit
+end  
+
+1.upto(100) {      
+               
+               
+x = rand(0..10)    
+y = rand(0..10)
+z = rand(0..10)    
+   
+ if x==y 
+if y == z
+money = 1000000                            
+end           
+       end
+
+if x == y
+if y!=z
+money = money + 10
+end
+end
+
+ if y == z
+if x != y
+money = money + 10
+end 
+end
+
+if x == z
+if x != y                    
+money = money + 10
+ end
+end
+if x!=y
+if y!=z
+if x!=z
+money = money - 10 
+end
+end
+end
+
+if x == y                                        
+	if  y == z          
+                 
+print " Ты выиграл супер приз!\n "
+print "#{x}-#{y}-#{z}\n "
+print "  #{money} $ " 
+exit  
+else   
+end      
+      end                              
+ if  x == y
+ print "#{x}-#{y}-#{z} "
+print " Ты выиграл! \n "
+print "У тебя уже  #{money } $\n "       
+break      
+        end                                                                               
+if  y == z 
+                       
+print "#{x}-#{y}-#{z} "
+
+print " Ты выиграл!\n "
+print "У тебя уже  #{ money} $ \n "                                                                 
+break
+  end                                     
+              
+if  z == x 
+                       
+print "#{x}-#{y}-#{z} "
+
+print " Ты выиграл!\n "
+print "У тебя уже  #{money} $ \n "                                      
+break                           
+
+else
+                          
+print " #{x}-#{y}-#{z} " 
+print "Ты проиграл.\n"
+print " У тебя осталось всего #{money} $\n "                                                                                 
+break  
+ end                                                      
+  
+if money == 0
+print "У тебя закончились деньги!"
+ exit
+end
+ 
+                                                       
+ }                 
+                             
+end 
